@@ -12,7 +12,7 @@ class Config:
     MAIL_USERNAME = os.environ.get('EMAIL_USER')
     MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
     FILE_UPLOAD = os.path.join(basedir, 'uploads')
-    APP_NAME = "My Application"
+    APP_NAME = "Practice Automation"
     #LDAP_LOGIN_ENABLED = True
     #LDAP_PROVIDER_URL = 'ldap://ldap.forumsys.com:389/'
     #LDAP_PROTOCOL_VERSION = 3
