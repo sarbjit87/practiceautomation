@@ -1,0 +1,10 @@
+body {
+  margin-top: 5rem;
+}
+
+.content-section {
+  padding: 40px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
