@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row mt-5">
+  <div class="col-sm-5 mx-auto mb-4">
+    <div class="content-section">
+        <form method="POST" action="{{ url_for('automation_bp.signupform') }}">
+          <fieldset>
+            <legend>Signup Form</legend>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleSelect1">Country</label>
+              <select name="country" class="form-control" id="countrySelect">
+                <option value=''>Select One</option>
+                <option>Australia</option>
+                <option>Canada</option>
+                <option>India</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleSelect2">Select favorite sports (multiple allowed)</label>
+              <select name="sports" multiple="" class="form-control" id="exampleSelect2">
+                <option>American Football</option>
+                <option>Badminton</option>
+                <option>Basketball</option>
+                <option>Cricket</option>
+                <option>Golf</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">About yourself</label>
+              <textarea name="about" class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+
+            <fieldset class="form-group">
+              <legend>Gender</legend>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="gender" id="optionsRadios1" value="male" checked="">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="gender" id="optionsRadios2" value="female">
+                  Female
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <legend>Subscribe to newsletter </legend>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="general_newsletter" checked="" name="general_newsletter">
+                  Subscribe to general newsletter
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="technical_newsletter" name="technical_newsletter">
+                  Subscribe to technical newsletter
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </fieldset>
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

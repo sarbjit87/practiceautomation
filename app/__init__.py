@@ -27,11 +27,13 @@ def create_app(config_class=Config):
     from app.auth.routes import auth_bp
     from app.main.routes import main_bp
     from app.errors.handlers import errors_bp
+    from app.automation.routes import automation_bp
     from app.commands import cmd_bp
 
     flask_app.register_blueprint(auth_bp)
     flask_app.register_blueprint(main_bp)
     flask_app.register_blueprint(errors_bp)
+    flask_app.register_blueprint(automation_bp)
     flask_app.register_blueprint(cmd_bp)
 
     return flask_app

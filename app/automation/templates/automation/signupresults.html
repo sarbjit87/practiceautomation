@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row mt-5">
+  <div class="col-sm-5 mx-auto mb-4">
+    <div class="content-section">
+      <legend>Signup Form Results</legend>
+      <table class="table">
+        {% for k, v in results.items() %}
+        <tr>
+        <td>{{k}}</td>
+        <td>{{v}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}

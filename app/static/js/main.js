@@ -15,4 +15,6 @@ $('#customSwitch1').click(function () {
     localStorage.theme = "https://maxcdn.bootstrapcdn.com/bootswatch/4.5.0/journal/bootstrap.min.css";
     $("input[id='customSwitch1']").prop('checked', false);
   }
+
+
 });
