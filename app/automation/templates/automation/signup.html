@@ -71,6 +71,16 @@
                 </label>
               </div>
             </fieldset>
+
+<fieldset class="form-group">
+            <div class="form-group">
+              <label for="couponInput">Enter Coupon Code</label>
+              <input name="coupon" type="text" class="form-control" id="couponInput" aria-describedby="emailHelp" placeholder="Enter coupon code">
+            </div>
+            <button id="couponbutton" onclick="applycoupon()" type="button" class="btn btn-warning">Apply Coupon</button>
+            <div class="coupontext"></div>
+</fieldset>
+
             <fieldset class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
           </fieldset>
@@ -78,4 +88,33 @@
     </div>
   </div>
 </div>
+
+<script>
+function applycoupon() {
+    var couponValue = document.getElementById("couponInput").value;
+
+    var newDiv1 = document.createElement("p");
+    var newContent1 = document.createTextNode("Verifying Coupon ...");
+    newDiv1.appendChild(newContent1);
+    newDiv1.className = "ajax-output-example-class";
+    $('.coupontext').html(newDiv1);
+
+    if ( couponValue == "AUTOMATION") {
+      var newDiv = document.createElement("p");
+      var newContent = document.createTextNode("Coupon Applied Successfully !");
+      newDiv.appendChild(newContent);
+      newDiv.className = "ajax-output-example-class";
+    } else {
+      var newDiv = document.createElement("p");
+      var newContent = document.createTextNode("Invalid Coupon !");
+      newDiv.appendChild(newContent);
+      newDiv.className = "ajax-output-example-class";
+    }
+
+    setTimeout(function(){
+      $('.coupontext').html(newDiv);
+    },5000);
+
+  }
+</script>
 {% endblock content %}

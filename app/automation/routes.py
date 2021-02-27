@@ -12,6 +12,7 @@ def signupform():
         country = request.form['country']
         sports = request.form.getlist('sports')
         about = request.form['about']
+        coupon = request.form['coupon']
 
         if request.form.get('general_newsletter'):
             returndict['general_newsletter'] = True
@@ -24,6 +25,7 @@ def signupform():
         returndict['country'] = country
         returndict['sports'] = sports
         returndict['about'] = about
+        returndict['coupon'] = coupon
 
 
 
