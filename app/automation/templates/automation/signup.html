@@ -99,10 +99,10 @@ function applycoupon() {
     var couponValue = document.getElementById("couponInput").value;
 
     var newDiv1 = document.createElement("p");
-    var newContent1 = document.createTextNode("Verifying Coupon ...");
+    var newContent1 = document.createTextNode("");
     newDiv1.appendChild(newContent1);
     newDiv1.className = "ajax-output-example-class";
-    //$('.coupontext').html(newDiv1);
+    $('.coupontext').html(newDiv1);
 
     if ( couponValue == "AUTOMATION") {
       var newDiv = document.createElement("p");
