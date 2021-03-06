@@ -72,14 +72,14 @@
               </div>
             </fieldset>
 
-<fieldset class="form-group">
-            <div class="form-group">
-              <label for="couponInput">Enter Coupon Code</label>
-              <input name="coupon" type="text" class="form-control" id="couponInput" aria-describedby="emailHelp" placeholder="Enter coupon code">
-            </div>
-            <button id="couponbutton" onclick="applycoupon()" type="button" class="btn btn-warning">Apply Coupon</button>
-            <div class="coupontext"></div>
-</fieldset>
+            <fieldset class="form-group">
+                <div class="form-group">
+                    <label for="couponInput">Enter Coupon Code</label>
+                    <input name="coupon" type="text" class="form-control" id="couponInput" aria-describedby="emailHelp" placeholder="Enter coupon code">
+                </div>
+                <button id="couponbutton" onclick="applycoupon()" type="button" class="btn btn-warning">Apply Coupon</button>
+                <div class="coupontext mt-2"></div>
+            </fieldset>
 
             <fieldset class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -91,28 +91,35 @@
 
 <script>
 function applycoupon() {
+   var btn = document.getElementById("couponbutton");
+   btn.disabled = true;
+   btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Verifying Coupon...'
+
+
     var couponValue = document.getElementById("couponInput").value;
 
     var newDiv1 = document.createElement("p");
     var newContent1 = document.createTextNode("Verifying Coupon ...");
     newDiv1.appendChild(newContent1);
     newDiv1.className = "ajax-output-example-class";
-    $('.coupontext').html(newDiv1);
+    //$('.coupontext').html(newDiv1);
 
     if ( couponValue == "AUTOMATION") {
       var newDiv = document.createElement("p");
       var newContent = document.createTextNode("Coupon Applied Successfully !");
       newDiv.appendChild(newContent);
-      newDiv.className = "ajax-output-example-class";
+      newDiv.className = "ajax-output-example-class text-success";
     } else {
       var newDiv = document.createElement("p");
       var newContent = document.createTextNode("Invalid Coupon !");
       newDiv.appendChild(newContent);
-      newDiv.className = "ajax-output-example-class";
+      newDiv.className = "ajax-output-example-class text-danger";
     }
 
     setTimeout(function(){
       $('.coupontext').html(newDiv);
+      btn.disabled = false;
+      btn.innerHTML = 'Apply Coupon';
     },5000);
 
   }
